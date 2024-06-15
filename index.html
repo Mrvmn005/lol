@@ -3,23 +3,37 @@
 <head>
     <title>I Love You, Lacey Rae!!</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Dancing Script', cursive;
+            background-image: url('https://images.unsplash.com/photo-1511988617509-a57c8a288659');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         h1 {
-            color: #ff69b4;
-            font-size: 3em;
+            color: teal;
+            font-size: 4em;
             text-shadow: 2px 2px 4px #000000;
+            animation: fadeIn 3s ease-in-out infinite alternate;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0.8;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>I love you, Lacey Rae!!</h1>
+    <h1>I love you, Lacey Rae!! 💩</h1>
 </body>
 </html>
