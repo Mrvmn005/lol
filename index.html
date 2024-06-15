@@ -16,12 +16,14 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            overflow: hidden;
         }
         h1 {
             color: teal;
             font-size: 4em;
             text-shadow: 2px 2px 4px #000000;
             animation: fadeIn 3s ease-in-out infinite alternate;
+            z-index: 1;
         }
         @keyframes fadeIn {
             from {
@@ -31,9 +33,32 @@
                 opacity: 1;
             }
         }
+        .emoji {
+            position: absolute;
+            top: -50px;
+            font-size: 2em;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
     </style>
 </head>
 <body>
     <h1>I love you, Lacey Rae!! 💩</h1>
+    <script>
+        const emojiCount = 20; // Number of falling emojis
+        for (let i = 0; i < emojiCount; i++) {
+            const emoji = document.createElement('div');
+            emoji.textContent = '💩';
+            emoji.classList.add('emoji');
+            emoji.style.left = `${Math.random() * 100}vw`;
+            emoji.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            emoji.style.animationDelay = `${Math.random() * 5}s`;
+            document.body.appendChild(emoji);
+        }
+    </script>
 </body>
 </html>
