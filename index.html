@@ -1,64 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>I Love You, Lacey Rae!!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mason Alexander's Website</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Dancing Script', cursive;
-            background-image: url('https://images.unsplash.com/photo-1511988617509-a57c8a288659');
+            background-image: url('background_butt.jpg'); /* Replace with actual background image URL */
             background-size: cover;
-            background-position: center;
             background-repeat: no-repeat;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
             overflow: hidden;
         }
+
         h1 {
-            color: teal;
-            font-size: 4em;
-            text-shadow: 2px 2px 4px #000000;
-            animation: fadeIn 3s ease-in-out infinite alternate;
-            z-index: 1;
+            margin-top: 50px;
+            font-size: 3em;
         }
-        @keyframes fadeIn {
-            from {
-                opacity: 0.8;
-            }
-            to {
+
+        .butt {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('butt.png'); /* Replace with actual butt image URL */
+            background-size: cover;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -50px;
+                left: calc(100vw * var(--x));
                 opacity: 1;
             }
-        }
-        .emoji {
-            position: absolute;
-            top: -50px;
-            font-size: 2em;
-            animation: fall linear infinite;
-        }
-        @keyframes fall {
-            to {
-                transform: translateY(100vh);
+            100% {
+                top: 100vh;
+                opacity: 0;
             }
         }
     </style>
 </head>
 <body>
-    <h1>I love you, Lacey Rae!! 💩</h1>
+    <h1>Mason Alexander is a brat and loves smelling farts</h1>
+    
     <script>
-        const emojiCount = 20; // Number of falling emojis
-        for (let i = 0; i < emojiCount; i++) {
-            const emoji = document.createElement('div');
-            emoji.textContent = '💩';
-            emoji.classList.add('emoji');
-            emoji.style.left = `${Math.random() * 100}vw`;
-            emoji.style.animationDuration = `${Math.random() * 3 + 2}s`;
-            emoji.style.animationDelay = `${Math.random() * 5}s`;
-            document.body.appendChild(emoji);
+        function createButt() {
+            const butt = document.createElement('div');
+            butt.classList.add('butt');
+            butt.style.setProperty('--x', Math.random());
+            document.body.appendChild(butt);
+
+            setTimeout(() => {
+                butt.remove();
+            }, 10000);
         }
+
+        setInterval(createButt, 500);
     </script>
 </body>
 </html>
